@@ -13,7 +13,6 @@
 **A custom Convolutional Neural Network for binary classification of chest X-ray images into NORMAL and PNEUMONIA classes.**
 
 **Author:** Md. Atik Hasan Rahat  
-**Student ID:** ____________________
 
 </div>
 
