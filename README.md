@@ -39,7 +39,18 @@ The main objective is to build and evaluate a CNN-based medical image classifica
 
 ## 📂 Dataset
 
-The project uses the publicly available **Chest X-Ray Images (Pneumonia)** dataset from Kaggle.
+This project uses the publicly available **Chest X-Ray Images (Pneumonia)** dataset from Kaggle, created by **Paul Mooney**.
+
+### 🔗 Dataset Link
+
+[![Kaggle Dataset](https://img.shields.io/badge/Kaggle-View%20Dataset-20BEFF?style=for-the-badge&logo=kaggle&logoColor=white)](https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia)
+
+👉 **Dataset:** https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia
+
+The dataset contains chest X-ray images organized into two classes:
+
+- **NORMAL**
+- **PNEUMONIA**
 
 ### Original Dataset Distribution
 
@@ -49,7 +60,7 @@ The project uses the publicly available **Chest X-Ray Images (Pneumonia)** datas
 | Validation | 8 | 8 | 16 |
 | Test | 234 | 390 | 624 |
 
-The original validation set contains only 16 images, which is too small for reliable model monitoring. Therefore, the original training set was re-split using an **80:20 stratified split**.
+The original validation set contains only **16 images**, which is too small for reliable model monitoring. Therefore, the original training set was re-split using an **80:20 stratified split**.
 
 ### Final Training Setup
 
@@ -59,10 +70,21 @@ The original validation set contains only 16 images, which is too small for reli
 | Validation | 268 | 776 | 1,044 |
 | Test | 234 | 390 | 624 |
 
-The official test set remained completely independent and was used only for final evaluation.
+The official test set remained completely independent and was used only for final model evaluation.
 
----
+### Dataset Loading
 
+The dataset was downloaded programmatically using `kagglehub`:
+
+```python
+import kagglehub
+
+dataset_path = kagglehub.dataset_download(
+    "paultimothymooney/chest-xray-pneumonia"
+)
+
+print("Dataset downloaded to:", dataset_path)
+```
 ## 🔄 Project Workflow
 
 ```mermaid
